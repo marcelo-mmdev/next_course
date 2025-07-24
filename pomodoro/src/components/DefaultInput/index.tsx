@@ -1,11 +1,26 @@
+import style from './styles.module.css';
+
 type DefaultInputProps = {
-  type: 'text' | 'number' | 'search';
-};
-export function DefaultInput({ type }: DefaultInputProps) {
+  id: string;
+  labelText: string;
+} & React.ComponentProps<'input'>;
+
+export function DefaultInput({
+  id,
+  type,
+  labelText,
+  ...rest
+}: DefaultInputProps) {
   return (
     <>
-      <label htmlFor='meuInput'>Task</label>
-      <input id='meuInput' type={type} />
+      <label htmlFor={id}>{labelText}</label>
+      <input
+        className={style.input}
+        id={id}
+        type={type}
+        {...rest}
+        placeholder='Digite a Task'
+      />
     </>
   );
 }
