@@ -8,6 +8,7 @@ import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
 import './styles/global.css';
 import './styles/theme.css';
+import { Footer } from './components/Footer';
 
 export function App() {
   return (
@@ -42,6 +43,10 @@ export function App() {
             <DefaultButton icon={<PlayCircleIcon />} />
           </div>
         </form>
+      </Container>
+
+      <Container>
+        <Footer />
       </Container>
     </>
   );
